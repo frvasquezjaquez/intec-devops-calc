@@ -11,5 +11,5 @@ def read_root():
 @app.get("/sumar")
 def read_sumar(num1: int = 0, num2: int = 0):
     return  {
-        "resultado": calc.sumar(num1, num2)
+        "total": calc.sumar(num1, num2)
     }
