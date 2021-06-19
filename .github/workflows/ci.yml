@@ -49,7 +49,9 @@ jobs:
           python-version: 3.8
           # The target architecture (x86, x64) of the Python interpreter.
           architecture: x64
-      - run: coverage run my-unittests.py
+      - run: |
+          coverage run my-unittests.py
+          coverage report -m --fail-under=80
 
       - name: Integration tests
         uses: actions/setup-python@v2.2.2
