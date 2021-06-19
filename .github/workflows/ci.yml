@@ -31,11 +31,20 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name: Setup Python
+      - name: Unit Tests
         uses: actions/setup-python@v2.2.2
         with:
           # Version range or exact version of a Python version to use, using SemVer's version range syntax.
           python-version: 3.8
           # The target architecture (x86, x64) of the Python interpreter.
           architecture: x64
-      - run: python my-unittests.py
+      - run: coverage run my-unittests.py
+
+      - name: Integration tests
+        uses: actions/setup-python@v2.2.2
+        with:
+          # Version range or exact version of a Python version to use, using SemVer's version range syntax.
+          python-version: 3.8
+          # The target architecture (x86, x64) of the Python interpreter.
+          architecture: x64
+      - run: behave tests/Integracion
