@@ -74,8 +74,8 @@ jobs:
         uses: mtsmachado8/heroku-deploy@v2.0.3
         with:
           # Email Linked to your Heroku Account
-          email: frvasquezjaquez@gmail.com
+          email: ${{ secrets.HEROKU_EMAIL}}
           # Your Heroku API Key
-          api_key: e9a802ac-c3c0-42ae-ab4e-951f9cc7d8c5
+          api_key: ${{secrets.HEROKU_API_TOKEN}}
           # Your Heroku App Name
-          app_name: stormy-ocean-65831 
+          app_name: ${{ secrets.APP_NAME}}
