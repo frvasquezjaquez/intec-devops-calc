@@ -161,3 +161,27 @@ jobs:
           environment: tests/postman/environments/staging.json
           # Path to CSV or JSON data file
           iterationData: tests/postman/calc-test-data.csv
+  
+  deployToProd:
+  
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    environment: production
+    
+    needs: testAPIDev
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Deploy to Heroku
+        uses: mtsmachado8/heroku-deploy@v2.0.3
+        with:
+          # Email Linked to your Heroku Account
+          email: ${{ secrets.HEROKU_EMAIL}}
+          # Your Heroku API Key
+          api_key: ${{secrets.HEROKU_API_TOKEN}}
+          # Your Heroku App Name
+          app_name: ${{ secrets.APP_NAME}}
