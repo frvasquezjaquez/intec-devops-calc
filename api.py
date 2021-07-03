@@ -13,3 +13,9 @@ def read_sumar(num1: int = 0, num2: int = 0):
     return  {
         "total": calc.sumar(num1, num2)
     }
+
+@app.get("/restar")
+def read_sumar(num1: int = 0, num2: int = 0):
+    return  {
+        "total": calc.restar(num1, num2)
+    }    
