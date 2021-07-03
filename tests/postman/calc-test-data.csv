@@ -4,3 +4,8 @@ sumar,1,12,13
 sumar,100,1000,1100
 sumar,0,0,0
 sumar,1,-1,Invalid
+restar,2,2,0
+restar,5,3,2
+restar,1000,500,500
+restar,0,0,0
+restar,1,-2,Invalid
