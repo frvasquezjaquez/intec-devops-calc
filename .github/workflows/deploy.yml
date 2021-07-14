@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   deployDev:
+    name: "Deploy to Test Environment"
   
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -40,6 +41,7 @@ jobs:
           
   testAPIDev:
   
+    name: "Run API Tests"
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     
@@ -67,6 +69,8 @@ jobs:
           iterationData: tests/postman/calc-test-data.csv
         
   deployStaging:
+
+    name: "Deploy to Staging Environment"
   
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -91,6 +95,9 @@ jobs:
           app_name: ${{ secrets.APP_NAME}}
 
   UAT:
+
+    name: "Run Users Acceptance Tests"
+
   
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -119,6 +126,8 @@ jobs:
           iterationData: tests/postman/calc-test-data.csv
   
   deployToProd:
+
+    name: "Deploy to Production"
   
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
