@@ -1,9 +1,9 @@
 Feature: Sumar dos numeros
 
     Scenario Outline: Suma
-        Given que deseo calcular dos numeros
-        When yo ingrese los numeros <num1> y <num2> en la operacion <operacion>
-        Then El resultado <result> debe ser la suma de ambos
+        Given que quiero realizar operaciones aritméticas
+        When desee <operacion> <num1> y <num2>
+        Then el resultado debe ser <result>
         
         Examples: Suma de Numeros
         | operacion | num1 | num2 | result  |

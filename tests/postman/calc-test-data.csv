@@ -9,3 +9,13 @@ restar,5,3,2
 restar,1000,500,500
 restar,0,0,0
 restar,1,-2,Invalid
+dividir,2,1,2.0,  
+dividir,8,8,1.0,  
+dividir,100,50,2.0
+dividir,0,0,Invalid    
+dividir,2,-2,nvalid
+multiplicar,2,1,2
+multiplicar,8,8,64
+multiplicar,3,100,300
+multiplicar,0,0,0
+multiplicar,1,-2,Invalid

@@ -19,6 +19,20 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(0, self.calc.restar(0, 0))
         self.assertEqual('Invalid', self.calc.restar(1, -2))
 
+    def test_mult(self):
+        self.assertEqual(2, self.calc.multiplicar(2, 1))
+        self.assertEqual(64, self.calc.multiplicar(8, 8))
+        self.assertEqual(300, self.calc.multiplicar(3,100))
+        self.assertEqual(0, self.calc.multiplicar(0, 0))
+        self.assertEqual('Invalid', self.calc.multiplicar(1, -2))
+
+    def test_div(self):
+        self.assertEqual(2, self.calc.dividir(2, 1))
+        self.assertEqual(1, self.calc.dividir(8, 8))
+        self.assertEqual(2, self.calc.dividir(100, 50))
+        self.assertEqual('Invalid', self.calc.dividir(0, 0))
+        self.assertEqual('Invalid', self.calc.dividir(2, -2))                
+
 
 if __name__ == '__main__':
     unittest.main()
